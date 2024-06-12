@@ -4,8 +4,7 @@
              x:Class="AppBuscaCep.Views.BairrosPorCidade"
              Title="Bairros Por Cidade">
     
-    <StackLayout HorizontalOptions="FillAndExpand" 
-                 VerticalOptions="FillAndExpand">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10, 0, 10, 0">
         <StackLayout VerticalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal">
                 <Picker x:Name="pck_estado" SelectedIndexChanged="pck_estado_SelectedIndexChanged" Title="Selecione o Estado:">
@@ -40,7 +39,7 @@
                     </Picker.Items>
                 </Picker>
 
-                <Picker x:Name="pck_cidade" SelectedIndexChanged="pck_cidade_SelectedIndexChanged" ItemDisplayBinding="{Binding descricao }" Title="Selecione a Cidade">
+                <Picker Margin="25, 0,0,0" x:Name="pck_cidade" SelectedIndexChanged="pck_cidade_SelectedIndexChanged" ItemDisplayBinding="{ Binding descricao }" Title="Selecione a Cidade">
                 </Picker>
 
             </StackLayout>
@@ -48,14 +47,14 @@
             <ListView x:Name="lst_bairros">
                 <ListView.Header>
                     <StackLayout>
-                        <Label Text="Nome do Bairro:" />
+                        <Label Text="Nome do Bairro:" FontAttributes="Bold" Margin="0, 20, 0, 0"  TextColor="#20B2AA"/>
                     </StackLayout>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Label Text="{Binding descricao_bairro}" />
+                                <Label Text="{ Binding descricao_bairro }" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

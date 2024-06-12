@@ -2,32 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscaCep.Views.BuscaCepPorLogradouro"
-             Title="BuscaCepPorLogradouro">
+             Title="Busca CEP Por Logradouro">
 
     <VerticalStackLayout>
         <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
-            <SearchBar x:Name="txt_logradouro"
-               Placeholder="Qual é sua rua?" HorizontalOptions="FillAndExpand"/>
-            <Button Text="Buscar" Clicked="Button_Clicked"  />
+            <SearchBar x:Name="txt_logradouro" Placeholder="Qual é sua rua?" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Buscar" Clicked="Button_Clicked" BackgroundColor="#20B2AA" />
         </StackLayout>
 
         <ActivityIndicator x:Name="carregando" IsRunning="False" />
 
-        <ScrollView>
+        <ScrollView Margin="10, 0, 10, 0">
             <ListView x:Name="lst_ceps">
                 <ListView.Header>
-                    <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
-                        <Label Grid.Row="0" Grid.Column="0" Text="CEP" />
-                        <Label Grid.Row="0" Grid.Column="1" Text="Logradouro" />
-                        <Label Grid.Row="0" Grid.Column="2" Text="Cidade" />
-                        <Label Grid.Row="0" Grid.Column="3" Text="UF" />
+                    <Grid ColumnDefinitions="*, 3*, *, *" RowDefinitions="Auto" >
+                        <Label Grid.Row="0" Grid.Column="0" Text="CEP" FontAttributes="Bold"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Logradouro" FontAttributes="Bold"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="Cidade" FontAttributes="Bold"/>
+                        <Label Grid.Row="0" Grid.Column="3" Text="UF" FontAttributes="Bold"/>
                     </Grid>
                 </ListView.Header>
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
+                            <Grid ColumnDefinitions="*, 3*, *, *" RowDefinitions="Auto">
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding CEP}" />
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao}" />
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding descricao_cidade}" />
